@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block cart_content %}
+<div class="row">
+    <div class="col-lg-12">
+        <div class="box-element">
+            <a class="btn btn-outline-dark" href="{% url 'home' %}">&#x2190; Continue Shopping</a>
+            <br><br>
+            <table class="table">
+                <tr>
+                    <th><h5>Items: <strong>3</strong></h5></th>
+                    <th><h5>Total: <strong>$42</strong></h5></th>
+                    <th>
+                        <a style="float: right; margin: 5px;" class="btn btn-success" href="{% url 'checkout' %}">Checkout</a>
+                    </th>
+                </tr>
+            </table>
+        </div>
+        <br>
+        <div class="box-element">
+            <!-- Header Row -->
+            <div class="cart-row" style="display: flex; align-items: center; border-bottom: 1px solid #ccc; padding-bottom: 10px; margin-bottom: 10px;">
+                <div style="flex: 2;"><strong>Item</strong></div>
+                <div style="flex: 1; text-align: center;"><strong>Price</strong></div>
+                <div style="flex: 1; text-align: center;"><strong>Quantity</strong></div>
+                <div style="flex: 1; text-align: center;"><strong>Total</strong></div>
+            </div>
+            <!-- Product Row -->
+            <div class="cart-row" style="display: flex; align-items: center; padding: 10px 0;">
+                <img class="row-image" src="{% static 'app/images/placeholder.png' %}" style="width: 50px; height: 50px; margin-right: 10px;">
+                <div style="flex: 2;"><p>Product 1</p></div>
+                <div style="flex: 1; text-align: center;"><p>$20</p></div>
+                <div style="flex: 1; text-align: center;">
+                    <p class="quantity">2</p>
+                    <div class="quantity" style="display: flex; justify-content: center; align-items: center;">
+                        <img class="chg-quantity" src="{% static 'app/images/arrow-up.png' %}" style="width: 20px; height: 20px; cursor: pointer; margin: 2px;">
+                        <img class="chg-quantity" src="{% static 'app/images/arrow-down.png' %}" style="width: 20px; height: 20px; cursor: pointer; margin: 2px;">
+                    </div>
+                </div>
+                <div style="flex: 1; text-align: center;"><p>$32</p></div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock cart_content %}
